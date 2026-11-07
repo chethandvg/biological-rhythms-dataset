@@ -6,6 +6,7 @@
 [![Proofs](https://github.com/chethandvg/biological-rhythms-dataset/actions/workflows/proofs.yml/badge.svg)](https://github.com/chethandvg/biological-rhythms-dataset/actions/workflows/proofs.yml)
 [![Code licence](https://img.shields.io/badge/code-PolyForm--Noncommercial--1.0.0-blue)](LICENSE)
 [![Data licence](https://img.shields.io/badge/data-CC_BY--NC_4.0-blue)](LICENSES/CC-BY-NC-4.0.txt)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24038799.svg)](https://doi.org/10.5281/zenodo.24038799)
 
 Part of **[Frequencies of Life](https://chethandvg.github.io/frequencies-of-life/)**, open code for the rhythms of life in which every claim says how it is known: proved, verified, tested, referenced or assumed.
 

@@ -1,0 +1,24 @@
+{
+  "upload_type": "dataset",
+  "title": "Biological rhythms dataset",
+  "description": "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI.",
+  "creators": [
+    {
+      "name": "Dandebala Venkatarama, Chethan",
+      "orcid": "0009-0006-6099-343X"
+    }
+  ],
+  "license": "cc-by-nc-4.0",
+  "keywords": [
+    "dataset",
+    "biology",
+    "fertilization",
+    "embryology",
+    "reproducibility",
+    "sonification",
+    "morphokinetics",
+    "heart rate",
+    "calcium oscillations"
+  ],
+  "notes": "Dual licence: the data (data/, schema/ and the generated files) are under CC BY-NC 4.0 (LICENSES/CC-BY-NC-4.0.txt); the code is under the PolyForm Noncommercial License 1.0.0 (LICENSE). Zenodo records one licence, so this record shows the data licence."
+}

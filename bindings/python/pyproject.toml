@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "biological-rhythms-dataset"
-version = "0.1.0"
+version = "0.1.1"
 description = "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI."
 readme = "README.md"
 license = "PolyForm-Noncommercial-1.0.0"

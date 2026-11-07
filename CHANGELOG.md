@@ -4,6 +4,12 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-07
+
+### Fixed
+
+- Zenodo could not archive 0.1.0: its CITATION.cff importer reads `license` as a single string, and this repository lists two (PolyForm Noncommercial for the code, CC BY-NC 4.0 for the data). `scripts/build.py` now also generates `.zenodo.json` from CITATION.cff, which Zenodo reads instead; it carries the data licence and a note naming the code licence. The data, code and claims are unchanged.
+
 ## [0.1.0] - 2026-11-07
 
 ### Added

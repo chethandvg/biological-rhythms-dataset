@@ -18,6 +18,9 @@ These decisions by the author shape every Frequencies of Life repository.
 
 | Date | Decision |
 |---|---|
+| 2026-11-07 | `heart_rate_at` places each Ouyang et al. 2020 weekly median at the middle of its gestational week (`bio:HEART-RATE-WEEK-PLACEMENT`, offset 0.5), where the paper's own fitted curve agrees with the medians. |
+| 2026-11-07 | Package metadata (Cargo, PyPI, npm) declares the code licence only; the data licence, CC BY-NC 4.0, is stated in the README and in `LICENSES/`. |
+| 2026-11-07 | The Zenodo record shows the data licence, CC BY-NC 4.0, with a note naming the code licence, because Zenodo records one licence. |
 
 ## Review log
 

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chethandvg/biological-rhythms-dataset/schema/sources.schema.json",
+  "title": "biological-rhythms-dataset/sources@1",
+  "description": "data/sources.yaml: the references cited by data/rhythms.yaml, by key. Every source has a DOI or a PMID.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": { "pattern": "^[a-z][a-z0-9]*$" },
+  "additionalProperties": {
+    "type": "object",
+    "required": ["cite", "title"],
+    "anyOf": [{ "required": ["doi"] }, { "required": ["pmid"] }],
+    "additionalProperties": false,
+    "properties": {
+      "cite": { "type": "string", "minLength": 1, "description": "Short citation: authors, year, journal, volume and pages." },
+      "title": { "type": "string", "minLength": 1 },
+      "doi": { "type": "string", "pattern": "^10\\.\\d{4,9}/\\S+$" },
+      "pmid": { "type": "string", "pattern": "^\\d+$" }
+    }
+  }
+}

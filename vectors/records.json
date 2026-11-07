@@ -1,0 +1,1219 @@
+{
+  "schema": "golden-vectors@1",
+  "description": "Every record, returned unchanged from data/rhythms.json.",
+  "tolerance": {
+    "rel": 0.0,
+    "abs": 0.0
+  },
+  "cases": [
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "rhythms",
+      "args": [],
+      "expected": [
+        {
+          "id": "bio:HUMAN-CA-SPIKE-INTERVAL",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Interval between Ca2+ spikes in human eggs at fertilisation",
+          "species": "Homo sapiens",
+          "kind": "period",
+          "min": 10,
+          "max": 35,
+          "unit": "min",
+          "statistic": "range",
+          "stage": "Oocyte donated during IVF treatment, inseminated in vitro",
+          "method": "Aequorin Ca2+ measurement with a photomultiplier in eggs donated during IVF treatment, zona-intact and zona-free, inseminated under perfusion",
+          "n": 10,
+          "n_unit": "eggs with Ca2+ transients, of 26 inseminated",
+          "notes": "Amplitude (up to 2.5 µM), duration and interval were similar in zona-intact and zona-free eggs. Only 10 of 26 inseminated eggs responded.",
+          "sources": [
+            {
+              "key": "taylor1993",
+              "cite": "Taylor et al. 1993, Human Reproduction 8(12):2174-2179",
+              "title": "Oscillations in intracellular free calcium induced by spermatozoa in human oocytes at fertilization",
+              "doi": "10.1093/oxfordjournals.humrep.a137999",
+              "pmid": "8150920"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-CA-SPIKE-DURATION",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Duration of each Ca2+ spike in human eggs at fertilisation",
+          "species": "Homo sapiens",
+          "kind": "duration",
+          "value": 120,
+          "unit": "s",
+          "statistic": "approximate",
+          "stage": "Oocyte donated during IVF treatment, inseminated in vitro",
+          "method": "Aequorin Ca2+ measurement with a photomultiplier in eggs donated during IVF treatment, zona-intact and zona-free, inseminated under perfusion",
+          "n": 10,
+          "n_unit": "eggs with Ca2+ transients, of 26 inseminated",
+          "notes": "Amplitude up to 2.5 µM, measured with aequorin.",
+          "sources": [
+            {
+              "key": "taylor1993",
+              "cite": "Taylor et al. 1993, Human Reproduction 8(12):2174-2179",
+              "title": "Oscillations in intracellular free calcium induced by spermatozoa in human oocytes at fertilization",
+              "doi": "10.1093/oxfordjournals.humrep.a137999",
+              "pmid": "8150920"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-CA-SPIKE-INTERVAL",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Interval between Ca2+ transients in mouse eggs at fertilisation",
+          "species": "Mus musculus",
+          "kind": "period",
+          "value": 3.4,
+          "unit": "min",
+          "statistic": "mean",
+          "stage": "Zona-free egg, fertilised in vitro",
+          "method": "Fluo-3 Ca2+ imaging of zona-free eggs during in vitro fertilisation",
+          "notes": "Reported as 3.4 ± 1.4 min. Mouse intervals depend on the conditions; compare bio:MOUSE-ZINC-SPARK-INTERVAL.",
+          "sources": [
+            {
+              "key": "kline1992",
+              "cite": "Kline & Kline 1992, Developmental Biology 149(1):80-89",
+              "title": "Repetitive calcium transients and the role of calcium in exocytosis and cell cycle activation in the mouse egg",
+              "doi": "10.1016/0012-1606(92)90265-i",
+              "pmid": "1728596"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-CA-FIRST-TRANSIENT-DURATION",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Duration of the first Ca2+ transient in mouse eggs at fertilisation",
+          "species": "Mus musculus",
+          "kind": "duration",
+          "value": 2.3,
+          "unit": "min",
+          "statistic": "mean",
+          "stage": "Zona-free egg, fertilised in vitro",
+          "method": "Fluo-3 Ca2+ imaging of zona-free eggs during in vitro fertilisation",
+          "notes": "Reported as 2.3 ± 0.6 min; the first transient lasts longer than the ones that follow.",
+          "sources": [
+            {
+              "key": "kline1992",
+              "cite": "Kline & Kline 1992, Developmental Biology 149(1):80-89",
+              "title": "Repetitive calcium transients and the role of calcium in exocytosis and cell cycle activation in the mouse egg",
+              "doi": "10.1016/0012-1606(92)90265-i",
+              "pmid": "1728596"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-CA-SPIKE-DURATION",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Duration of each later Ca2+ transient in mouse eggs at fertilisation",
+          "species": "Mus musculus",
+          "kind": "duration",
+          "value": 0.5,
+          "unit": "min",
+          "statistic": "mean",
+          "stage": "Zona-free egg, fertilised in vitro",
+          "method": "Fluo-3 Ca2+ imaging of zona-free eggs during in vitro fertilisation",
+          "notes": "Reported as 0.5 ± 0.1 min.",
+          "sources": [
+            {
+              "key": "kline1992",
+              "cite": "Kline & Kline 1992, Developmental Biology 149(1):80-89",
+              "title": "Repetitive calcium transients and the role of calcium in exocytosis and cell cycle activation in the mouse egg",
+              "doi": "10.1016/0012-1606(92)90265-i",
+              "pmid": "1728596"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-ZINC-SPARK-INTERVAL",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Interval between zinc sparks in activated mouse eggs",
+          "species": "Mus musculus",
+          "kind": "period",
+          "value": 9.5,
+          "unit": "min",
+          "statistic": "mean",
+          "stage": "Mature (MII) egg, mostly activated parthenogenetically with SrCl2",
+          "method": "Imaging of zinc released into the medium with an extracellular zinc dye, alongside intracellular Ca2+ imaging",
+          "n": 36,
+          "n_unit": "intervals between sparks",
+          "notes": "Mean ± SEM 9.5 ± 0.8 min, range 3.46-26.00 min. Each spark followed a Ca2+ transient; eggs gave 1-5 sparks, all within about the first 90 min. Most eggs were activated with strontium, not sperm.",
+          "sources": [
+            {
+              "key": "kim2011",
+              "cite": "Kim et al. 2011, ACS Chemical Biology 6(7):716-723",
+              "title": "Zinc sparks are triggered by fertilization and facilitate cell cycle resumption in mammalian eggs",
+              "doi": "10.1021/cb200084y",
+              "pmid": "21526836"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-EGG-ZINC-VESICLES",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Number of zinc-loaded cortical vesicles in a mouse egg",
+          "species": "Mus musculus",
+          "kind": "count",
+          "value": 8000,
+          "unit": "vesicles",
+          "statistic": "estimate",
+          "stage": "Mature (MII) egg",
+          "method": "Live zinc-probe imaging, scanning transmission electron microscopy with energy-dispersive spectroscopy, and X-ray fluorescence microscopy and tomography",
+          "notes": "An extrapolated estimate. More than 90% of the vesicles lie within 5 µm of the plasma membrane.",
+          "sources": [
+            {
+              "key": "que2015",
+              "cite": "Que et al. 2015, Nature Chemistry 7(2):130-139",
+              "title": "Quantitative mapping of zinc fluxes in the mammalian egg reveals the origin of fertilization-induced zinc sparks",
+              "doi": "10.1038/nchem.2133",
+              "pmid": "25615666"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-ZINC-VESICLE-ATOMS",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Zinc atoms in one cortical vesicle of a mouse egg",
+          "species": "Mus musculus",
+          "kind": "count",
+          "value": 1000000,
+          "unit": "atoms",
+          "statistic": "approximate",
+          "stage": "Mature (MII) egg",
+          "method": "Live zinc-probe imaging, scanning transmission electron microscopy with energy-dispersive spectroscopy, and X-ray fluorescence microscopy and tomography",
+          "notes": "About 10^6 atoms per vesicle on average, so the vesicles together hold about 8 × 10^9 atoms, roughly 15% of the egg's zinc.",
+          "sources": [
+            {
+              "key": "que2015",
+              "cite": "Que et al. 2015, Nature Chemistry 7(2):130-139",
+              "title": "Quantitative mapping of zinc fluxes in the mammalian egg reveals the origin of fertilization-induced zinc sparks",
+              "doi": "10.1038/nchem.2133",
+              "pmid": "25615666"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-ZINC-SPARKS-PER-EGG",
+          "version": "1.0.0",
+          "topic": "egg-activation",
+          "quantity": "Number of zinc sparks in a human egg activated with PLCζ",
+          "species": "Homo sapiens",
+          "kind": "count",
+          "value": 1,
+          "unit": "sparks",
+          "statistic": "observed",
+          "stage": "Egg matured in vitro and activated without sperm, by injection of hPLCζ cRNA",
+          "method": "Fluo-4 Ca2+ imaging and extracellular FluoZin-3 zinc imaging of discarded immature eggs from ICSI cycles, mostly matured in vitro; other eggs in the study were activated with Ca-ionomycin or ionomycin",
+          "n": 2,
+          "n_unit": "eggs that sparked, of 5 injected with hPLCζ cRNA",
+          "notes": "The spark is tightly coordinated with the first Ca2+ transient. These eggs were activated artificially; the human zinc spark has not been shown at fertilisation by sperm. Que et al. 2019, a bovine study, is cited only for its statement that the zinc spark has been documented in humans; the value of 1 spark is from Duncan et al. 2016.",
+          "sources": [
+            {
+              "key": "duncan2016",
+              "cite": "Duncan et al. 2016, Scientific Reports 6:24737",
+              "title": "The zinc spark is an inorganic signature of human egg activation",
+              "doi": "10.1038/srep24737",
+              "pmid": "27113677"
+            },
+            {
+              "key": "que2019",
+              "cite": "Que et al. 2019, Theriogenology 127:41-48",
+              "title": "Bovine eggs release zinc in response to parthenogenetic and sperm-induced egg activation",
+              "doi": "10.1016/j.theriogenology.2018.12.031",
+              "pmid": "30639695"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-SPERM-BEAT-DILUTED-SEMEN",
+          "version": "1.0.0",
+          "topic": "sperm",
+          "quantity": "Flagellar beat frequency of human sperm swimming in diluted semen",
+          "species": "Homo sapiens",
+          "kind": "frequency",
+          "value": 19,
+          "unit": "Hz",
+          "statistic": "median",
+          "stage": "Progressive, free-swimming sperm in diluted semen (low viscosity)",
+          "method": "High-speed imaging at 169.2 frames/s with automated flagellar tracking (FAST) of free-swimming progressive cells; three donors in total",
+          "n": 205,
+          "n_unit": "cells",
+          "notes": "IQR 6.5 Hz. The CASA 'beat-cross frequency' does not measure this: a straight-line fit between the two gave R² = 0.042.",
+          "sources": [
+            {
+              "key": "gallagher2019",
+              "cite": "Gallagher et al. 2019, Human Reproduction 34(7):1173-1185",
+              "title": "Rapid sperm capture: high-throughput flagellar waveform analysis",
+              "doi": "10.1093/humrep/dez056",
+              "pmid": "31170729"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-SPERM-BEAT-VISCOUS",
+          "version": "1.0.0",
+          "topic": "sperm",
+          "quantity": "Flagellar beat frequency of human sperm swimming in a high-viscosity medium",
+          "species": "Homo sapiens",
+          "kind": "frequency",
+          "value": 10,
+          "unit": "Hz",
+          "statistic": "median",
+          "stage": "Progressive, free-swimming sperm in high-viscosity methylcellulose medium",
+          "method": "High-speed imaging at 169.2 frames/s with automated flagellar tracking (FAST) of free-swimming progressive cells; three donors in total",
+          "n": 119,
+          "n_unit": "cells",
+          "notes": "IQR 2.9 Hz, about half the beat frequency in diluted semen (bio:HUMAN-SPERM-BEAT-DILUTED-SEMEN).",
+          "sources": [
+            {
+              "key": "gallagher2019",
+              "cite": "Gallagher et al. 2019, Human Reproduction 34(7):1173-1185",
+              "title": "Rapid sperm capture: high-throughput flagellar waveform analysis",
+              "doi": "10.1093/humrep/dez056",
+              "pmid": "31170729"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-SPERM-BEAT-ADHERED",
+          "version": "1.0.0",
+          "topic": "sperm",
+          "quantity": "Flagellar beat frequency of head-adhered human sperm before stimulation",
+          "species": "Homo sapiens",
+          "kind": "frequency",
+          "value": 18.9,
+          "unit": "Hz",
+          "statistic": "median",
+          "stage": "Head-adhered sperm in low-viscosity medium, before stimulation",
+          "method": "High-speed imaging at 332 frames/s of head-adhered cells at 21 °C, the same cells before and after 4-aminopyridine (4-AP)",
+          "n": 34,
+          "n_unit": "cells from 4 donors",
+          "notes": "IQR 15.0-24.2 Hz. The same cells as bio:HUMAN-SPERM-BEAT-HYPERACTIVATED.",
+          "sources": [
+            {
+              "key": "ooi2014",
+              "cite": "Ooi et al. 2014, Royal Society Open Science 1(2):140230",
+              "title": "The mechanics of hyperactivation in adhered human sperm",
+              "doi": "10.1098/rsos.140230",
+              "pmid": "26064546"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-SPERM-BEAT-HYPERACTIVATED",
+          "version": "1.0.0",
+          "topic": "sperm",
+          "quantity": "Flagellar beat frequency of head-adhered human sperm hyperactivated with 4-AP",
+          "species": "Homo sapiens",
+          "kind": "frequency",
+          "value": 11.7,
+          "unit": "Hz",
+          "statistic": "median",
+          "stage": "Head-adhered sperm after hyperactivation with 4-aminopyridine",
+          "method": "High-speed imaging at 332 frames/s of head-adhered cells at 21 °C, the same cells before and after 4-aminopyridine (4-AP)",
+          "n": 34,
+          "n_unit": "cells from 4 donors",
+          "notes": "IQR 9.9-14.6 Hz. Ooi et al. report a change of -36% from the same cells before stimulation (the two medians alone differ by 38%), while the RMS bending angle rose from 25.4° to 46.7°. 4-AP is a drug trigger, not physiological capacitation; 13 of the 34 cells beat with several frequency modes.",
+          "sources": [
+            {
+              "key": "ooi2014",
+              "cite": "Ooi et al. 2014, Royal Society Open Science 1(2):140230",
+              "title": "The mechanics of hyperactivation in adhered human sperm",
+              "doi": "10.1098/rsos.140230",
+              "pmid": "26064546"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-OVIDUCT-CILIA-BEAT",
+          "version": "1.0.0",
+          "topic": "oviduct",
+          "quantity": "Ciliary beat frequency in the human fallopian tube",
+          "species": "Homo sapiens",
+          "kind": "frequency",
+          "value": 5.3,
+          "unit": "Hz",
+          "statistic": "mean",
+          "stage": "Fallopian tube epithelium ex vivo, proliferative and secretory phases",
+          "method": "Light-intensity variation recording of ciliary beating in tubes removed at hysterectomy for benign conditions",
+          "n": 26,
+          "n_unit": "women (14 in the proliferative, 12 in the secretory phase)",
+          "notes": "Reported as 5.3 ± 0.2 Hz. No significant difference between anatomical sites; in the fimbria the beat was faster in the secretory phase (5.8 Hz) than in the proliferative phase (4.9 Hz).",
+          "contested": "Bylander et al. 2010, a mouse study, quote 5-20 Hz for the human tube, citing older human studies by Mahmood et al. (1998) and Westrom et al.; this direct measurement lies at the low end of that range.",
+          "sources": [
+            {
+              "key": "lyons2002",
+              "cite": "Lyons et al. 2002, Human Reproduction 17(3):584-588",
+              "title": "Fallopian tube ciliary beat frequency in relation to the stage of menstrual cycle and anatomical site",
+              "doi": "10.1093/humrep/17.3.584",
+              "pmid": "11870107"
+            },
+            {
+              "key": "bylander2010",
+              "cite": "Bylander et al. 2010, Reproductive Biology and Endocrinology 8:48",
+              "title": "Rapid effects of progesterone on ciliary beat frequency in the mouse fallopian tube",
+              "doi": "10.1186/1477-7827-8-48",
+              "pmid": "20470431"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-OVIDUCT-CILIA-BEAT",
+          "version": "1.0.0",
+          "topic": "oviduct",
+          "quantity": "Ciliary beat frequency in the mouse fallopian tube",
+          "species": "Mus musculus",
+          "kind": "frequency",
+          "value": 23.3,
+          "unit": "Hz",
+          "statistic": "mean",
+          "stage": "Fallopian tube pieces ex vivo, before any hormone was added",
+          "method": "High-speed bright-field imaging at 35 °C of tube pieces held still by a motorised needle",
+          "n": 19,
+          "n_unit": "mice",
+          "notes": "Reported as 23.3 ± 3.8 Hz (range 16.8-31.9 Hz). Progesterone at 100 nM lowered it by 15% compared with controls after 30 min.",
+          "sources": [
+            {
+              "key": "bylander2010",
+              "cite": "Bylander et al. 2010, Reproductive Biology and Endocrinology 8:48",
+              "title": "Rapid effects of progesterone on ciliary beat frequency in the mouse fallopian tube",
+              "doi": "10.1186/1477-7827-8-48",
+              "pmid": "20470431"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-UTERINE-CONTRACTIONS-LATE-FOLLICULAR",
+          "version": "1.0.0",
+          "topic": "uterus",
+          "quantity": "Human uterine contraction frequency in the late follicular phase",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 1.61,
+          "unit": "/min",
+          "statistic": "reported",
+          "stage": "Natural menstrual cycle, late follicular phase",
+          "method": "Four-minute transvaginal ultrasound recordings analysed by speckle tracking; contraction frequency of the posterior uterine wall",
+          "n": 70,
+          "n_unit": "recordings analysed across all phases together, of 96 from 64 healthy women with natural cycles; the number in each phase is not recorded here",
+          "notes": "The highest frequency of the cycle phases compared.",
+          "sources": [
+            {
+              "key": "rees2023",
+              "cite": "Rees et al. 2023, Reproductive BioMedicine Online 46(1):115-122",
+              "title": "Uterine contractile activity in healthy women throughout the menstrual cycle measured using a novel quantitative two-dimensional transvaginal ultrasound speckle tracking method",
+              "doi": "10.1016/j.rbmo.2022.08.104",
+              "pmid": "36244894"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-UTERINE-CONTRACTIONS-MENSTRUAL",
+          "version": "1.0.0",
+          "topic": "uterus",
+          "quantity": "Human uterine contraction frequency in the menstrual phase",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 1.31,
+          "unit": "/min",
+          "statistic": "reported",
+          "stage": "Natural menstrual cycle, menstrual phase",
+          "method": "Four-minute transvaginal ultrasound recordings analysed by speckle tracking; contraction frequency of the posterior uterine wall",
+          "n": 70,
+          "n_unit": "recordings analysed across all phases together, of 96 from 64 healthy women with natural cycles; the number in each phase is not recorded here",
+          "sources": [
+            {
+              "key": "rees2023",
+              "cite": "Rees et al. 2023, Reproductive BioMedicine Online 46(1):115-122",
+              "title": "Uterine contractile activity in healthy women throughout the menstrual cycle measured using a novel quantitative two-dimensional transvaginal ultrasound speckle tracking method",
+              "doi": "10.1016/j.rbmo.2022.08.104",
+              "pmid": "36244894"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-UTERINE-CONTRACTIONS-LATE-LUTEAL",
+          "version": "1.0.0",
+          "topic": "uterus",
+          "quantity": "Human uterine contraction frequency in the late luteal phase",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 1.35,
+          "unit": "/min",
+          "statistic": "reported",
+          "stage": "Natural menstrual cycle, late luteal phase",
+          "method": "Four-minute transvaginal ultrasound recordings analysed by speckle tracking; contraction frequency of the posterior uterine wall",
+          "n": 70,
+          "n_unit": "recordings analysed across all phases together, of 96 from 64 healthy women with natural cycles; the number in each phase is not recorded here",
+          "sources": [
+            {
+              "key": "rees2023",
+              "cite": "Rees et al. 2023, Reproductive BioMedicine Online 46(1):115-122",
+              "title": "Uterine contractile activity in healthy women throughout the menstrual cycle measured using a novel quantitative two-dimensional transvaginal ultrasound speckle tracking method",
+              "doi": "10.1016/j.rbmo.2022.08.104",
+              "pmid": "36244894"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T2",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 2-cell stage (t2) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 27.48,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "2 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 2,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper, which gives 27.26-27.71 h in brackets.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T3",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 3-cell stage (t3) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 37.78,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "3 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 3,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T4",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 4-cell stage (t4) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 40.4,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "4 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 4,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T5",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 5-cell stage (t5) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 51.04,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "5 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 5,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T6",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 6-cell stage (t6) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 54.25,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "6 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 6,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T7",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 7-cell stage (t7) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 57.57,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "7 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 7,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-T8",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the 8-cell stage (t8) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 61.51,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "8 cells",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "series": "human-cleavage",
+          "at": 8,
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-TM",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to compaction (tM, morula) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 87.75,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "Morula, compaction complete",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-TSB",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the start of blastulation (tSB) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 99.18,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "Start of blastulation",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-TB",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the full blastocyst (tB) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 104.5,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "Full blastocyst",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EMBRYO-TEB",
+          "version": "1.0.0",
+          "topic": "preimplantation",
+          "quantity": "Time from insemination to the expanded blastocyst (tEB) in human embryos",
+          "species": "Homo sapiens",
+          "kind": "time",
+          "value": 110.82,
+          "unit": "h",
+          "statistic": "mean",
+          "stage": "Expanded blastocyst",
+          "method": "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020",
+          "n": 2523,
+          "n_unit": "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)",
+          "notes": "Hours after insemination; fresh-sperm group, Table 5 of the paper.",
+          "sources": [
+            {
+              "key": "lorenzo2026",
+              "cite": "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267",
+              "title": "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes",
+              "doi": "10.5935/1518-0557.20260005",
+              "pmid": "41842690"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EHR-6W",
+          "version": "1.0.0",
+          "topic": "heart",
+          "quantity": "Median human embryonic heart rate at 6 weeks of gestation",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 117,
+          "unit": "bpm",
+          "statistic": "median",
+          "stage": "6 gestational weeks",
+          "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+          "n": 20272,
+          "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+          "series": "human-heart-rate",
+          "at": 6,
+          "notes": "5th-95th percentile 103-128 bpm.",
+          "sources": [
+            {
+              "key": "ouyang2020",
+              "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+              "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+              "doi": "10.1186/s12884-020-03186-2",
+              "pmid": "32928137"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EHR-7W",
+          "version": "1.0.0",
+          "topic": "heart",
+          "quantity": "Median human embryonic heart rate at 7 weeks of gestation",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 146,
+          "unit": "bpm",
+          "statistic": "median",
+          "stage": "7 gestational weeks",
+          "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+          "n": 2969,
+          "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+          "series": "human-heart-rate",
+          "at": 7,
+          "sources": [
+            {
+              "key": "ouyang2020",
+              "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+              "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+              "doi": "10.1186/s12884-020-03186-2",
+              "pmid": "32928137"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EHR-8W",
+          "version": "1.0.0",
+          "topic": "heart",
+          "quantity": "Median human embryonic heart rate at 8 weeks of gestation",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 174,
+          "unit": "bpm",
+          "statistic": "median",
+          "stage": "8 gestational weeks",
+          "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+          "n": 4109,
+          "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+          "series": "human-heart-rate",
+          "at": 8,
+          "sources": [
+            {
+              "key": "ouyang2020",
+              "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+              "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+              "doi": "10.1186/s12884-020-03186-2",
+              "pmid": "32928137"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EHR-9W",
+          "version": "1.0.0",
+          "topic": "heart",
+          "quantity": "Median human embryonic heart rate at 9 weeks of gestation",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 176,
+          "unit": "bpm",
+          "statistic": "median",
+          "stage": "9 gestational weeks",
+          "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+          "n": 2267,
+          "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+          "series": "human-heart-rate",
+          "at": 9,
+          "notes": "5th-95th percentile 162.4-188 bpm; the highest weekly median, after which the rate begins to fall.",
+          "sources": [
+            {
+              "key": "ouyang2020",
+              "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+              "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+              "doi": "10.1186/s12884-020-03186-2",
+              "pmid": "32928137"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-EHR-10W",
+          "version": "1.0.0",
+          "topic": "heart",
+          "quantity": "Median human embryonic heart rate at 10 weeks of gestation",
+          "species": "Homo sapiens",
+          "kind": "rate",
+          "value": 174,
+          "unit": "bpm",
+          "statistic": "median",
+          "stage": "10 gestational weeks",
+          "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+          "n": 799,
+          "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+          "series": "human-heart-rate",
+          "at": 10,
+          "sources": [
+            {
+              "key": "ouyang2020",
+              "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+              "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+              "doi": "10.1186/s12884-020-03186-2",
+              "pmid": "32928137"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-SEGMENTATION-CLOCK-PERIOD",
+          "version": "1.0.0",
+          "topic": "segmentation",
+          "quantity": "Period of the human segmentation clock in presomitic mesoderm cells derived in vitro",
+          "species": "Homo sapiens",
+          "kind": "period",
+          "value": 5,
+          "unit": "h",
+          "statistic": "approximate",
+          "stage": "Presomitic mesoderm induced in vitro from human pluripotent stem cells",
+          "method": "Time-lapse imaging of oscillating segmentation-clock gene expression (such as HES7) in presomitic mesoderm induced in vitro from pluripotent stem cells",
+          "notes": "Measured only in vitro: the human clock has not been recorded in an embryo. Matsuda et al. 2020 (Science) give 5-6 h.",
+          "contested": "Diaz-Cuadros et al. 2020 carries an Editor's Note (February 2024) about cell-tracking errors; its Author Correction (Nature 654:E13, 2026) states that the conclusions still hold.",
+          "sources": [
+            {
+              "key": "matsuda2020nature",
+              "cite": "Matsuda et al. 2020, Nature 580:124-129",
+              "title": "Recapitulating the human segmentation clock with pluripotent stem cells",
+              "doi": "10.1038/s41586-020-2144-9",
+              "pmid": "32238941"
+            },
+            {
+              "key": "diazcuadros2020",
+              "cite": "Diaz-Cuadros et al. 2020, Nature 580:113-118",
+              "title": "In vitro characterization of the human segmentation clock",
+              "doi": "10.1038/s41586-019-1885-9",
+              "pmid": "31915384"
+            },
+            {
+              "key": "matsuda2020science",
+              "cite": "Matsuda et al. 2020, Science 369:1450-1455",
+              "title": "Species-specific segmentation clock periods are due to differential biochemical reaction speeds",
+              "doi": "10.1126/science.aba7668",
+              "pmid": "32943519"
+            },
+            {
+              "key": "diazcuadros2026",
+              "cite": "Diaz-Cuadros et al. 2026, Nature 654:E13 (Author Correction)",
+              "title": "Author Correction: In vitro characterization of the human segmentation clock",
+              "doi": "10.1038/s41586-026-10651-z"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-SEGMENTATION-CLOCK-PERIOD",
+          "version": "1.0.0",
+          "topic": "segmentation",
+          "quantity": "Period of the mouse segmentation clock in presomitic mesoderm cells derived in vitro",
+          "species": "Mus musculus",
+          "kind": "period",
+          "min": 2,
+          "max": 3,
+          "unit": "h",
+          "statistic": "range",
+          "stage": "Presomitic mesoderm induced in vitro from mouse pluripotent stem cells",
+          "method": "Time-lapse imaging of oscillating segmentation-clock gene expression (such as HES7) in presomitic mesoderm induced in vitro from pluripotent stem cells",
+          "notes": "The 2-3 h range is from Matsuda et al. 2020 (Science). Diaz-Cuadros et al. 2020 measured 2.5 h in mouse cells, half the human period in the same study; that paper carries the same Editor's Note (February 2024) and Author Correction (Nature 654:E13, 2026) as bio:HUMAN-SEGMENTATION-CLOCK-PERIOD, and the correction states that its conclusions still hold.",
+          "sources": [
+            {
+              "key": "matsuda2020science",
+              "cite": "Matsuda et al. 2020, Science 369:1450-1455",
+              "title": "Species-specific segmentation clock periods are due to differential biochemical reaction speeds",
+              "doi": "10.1126/science.aba7668",
+              "pmid": "32943519"
+            },
+            {
+              "key": "diazcuadros2020",
+              "cite": "Diaz-Cuadros et al. 2020, Nature 580:113-118",
+              "title": "In vitro characterization of the human segmentation clock",
+              "doi": "10.1038/s41586-019-1885-9",
+              "pmid": "31915384"
+            },
+            {
+              "key": "diazcuadros2026",
+              "cite": "Diaz-Cuadros et al. 2026, Nature 654:E13 (Author Correction)",
+              "title": "Author Correction: In vitro characterization of the human segmentation clock",
+              "doi": "10.1038/s41586-026-10651-z"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-MAJOR-ZGA-STAGE",
+          "version": "1.0.0",
+          "topic": "genome-activation",
+          "quantity": "Cell stage of major embryonic genome activation in human embryos",
+          "species": "Homo sapiens",
+          "kind": "stage",
+          "min": 4,
+          "max": 8,
+          "unit": "cells",
+          "statistic": "range",
+          "stage": "Preimplantation embryo, between the 4- and 8-cell stages",
+          "method": "Patterns of newly synthesised polypeptides in IVF embryos and their dependence on transcription",
+          "notes": "Cleavage is not sensitive to transcriptional inhibition until after the 4-cell stage.",
+          "contested": "Revised in part: low-level transcription begins earlier, at the one-cell stage (Asami et al. 2022; bio:HUMAN-MINOR-ZGA-STAGE). The major wave is still placed at 4-8 cells.",
+          "sources": [
+            {
+              "key": "braude1988",
+              "cite": "Braude et al. 1988, Nature 332:459-461",
+              "title": "Human gene expression first occurs between the four- and eight-cell stages of preimplantation development",
+              "doi": "10.1038/332459a0",
+              "pmid": "3352746"
+            },
+            {
+              "key": "asami2022",
+              "cite": "Asami et al. 2022, Cell Stem Cell 29(2):209-216",
+              "title": "Human embryonic genome activation initiates at the one-cell stage",
+              "doi": "10.1016/j.stem.2021.11.012",
+              "pmid": "34936886"
+            }
+          ]
+        },
+        {
+          "id": "bio:HUMAN-MINOR-ZGA-STAGE",
+          "version": "1.0.0",
+          "topic": "genome-activation",
+          "quantity": "Cell stage at which human embryonic transcription begins (minor genome activation)",
+          "species": "Homo sapiens",
+          "kind": "stage",
+          "value": 1,
+          "unit": "cells",
+          "statistic": "observed",
+          "stage": "Bipronuclear one-cell embryo (zygote)",
+          "method": "High-resolution single-cell RNA sequencing of MII oocytes and bipronuclear one-cell embryos",
+          "notes": "Low-magnitude upregulation of hundreds of spliced transcripts.",
+          "sources": [
+            {
+              "key": "asami2022",
+              "cite": "Asami et al. 2022, Cell Stem Cell 29(2):209-216",
+              "title": "Human embryonic genome activation initiates at the one-cell stage",
+              "doi": "10.1016/j.stem.2021.11.012",
+              "pmid": "34936886"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-MAJOR-ZGA-STAGE",
+          "version": "1.0.0",
+          "topic": "genome-activation",
+          "quantity": "Cell stage of major zygotic genome activation in mouse embryos",
+          "species": "Mus musculus",
+          "kind": "stage",
+          "value": 2,
+          "unit": "cells",
+          "statistic": "reported",
+          "stage": "Mid-to-late 2-cell embryo, after the second round of DNA replication",
+          "method": "Review of transcriptome and transcription-inhibition studies of mouse embryos",
+          "sources": [
+            {
+              "key": "aoki2022",
+              "cite": "Aoki 2022, Journal of Reproduction and Development 68(2):79-84",
+              "title": "Zygotic gene activation in mice: profile and regulation",
+              "doi": "10.1262/jrd.2021-129",
+              "pmid": "35034936"
+            },
+            {
+              "key": "braude1988",
+              "cite": "Braude et al. 1988, Nature 332:459-461",
+              "title": "Human gene expression first occurs between the four- and eight-cell stages of preimplantation development",
+              "doi": "10.1038/332459a0",
+              "pmid": "3352746"
+            }
+          ]
+        },
+        {
+          "id": "bio:MOUSE-MINOR-ZGA-STAGE",
+          "version": "1.0.0",
+          "topic": "genome-activation",
+          "quantity": "Cell stage of minor zygotic genome activation in mouse embryos",
+          "species": "Mus musculus",
+          "kind": "stage",
+          "value": 1,
+          "unit": "cells",
+          "statistic": "reported",
+          "stage": "Mid one-cell embryo (zygote)",
+          "method": "Review of transcriptome and transcription-inhibition studies of mouse embryos",
+          "sources": [
+            {
+              "key": "aoki2022",
+              "cite": "Aoki 2022, Journal of Reproduction and Development 68(2):79-84",
+              "title": "Zygotic gene activation in mice: profile and regulation",
+              "doi": "10.1262/jrd.2021-129",
+              "pmid": "35034936"
+            }
+          ]
+        }
+      ],
+      "note": "all records, in the order of data/rhythms.yaml"
+    },
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "get",
+      "args": [
+        "bio:HUMAN-CA-SPIKE-INTERVAL"
+      ],
+      "expected": {
+        "id": "bio:HUMAN-CA-SPIKE-INTERVAL",
+        "version": "1.0.0",
+        "topic": "egg-activation",
+        "quantity": "Interval between Ca2+ spikes in human eggs at fertilisation",
+        "species": "Homo sapiens",
+        "kind": "period",
+        "min": 10,
+        "max": 35,
+        "unit": "min",
+        "statistic": "range",
+        "stage": "Oocyte donated during IVF treatment, inseminated in vitro",
+        "method": "Aequorin Ca2+ measurement with a photomultiplier in eggs donated during IVF treatment, zona-intact and zona-free, inseminated under perfusion",
+        "n": 10,
+        "n_unit": "eggs with Ca2+ transients, of 26 inseminated",
+        "notes": "Amplitude (up to 2.5 µM), duration and interval were similar in zona-intact and zona-free eggs. Only 10 of 26 inseminated eggs responded.",
+        "sources": [
+          {
+            "key": "taylor1993",
+            "cite": "Taylor et al. 1993, Human Reproduction 8(12):2174-2179",
+            "title": "Oscillations in intracellular free calcium induced by spermatozoa in human oocytes at fertilization",
+            "doi": "10.1093/oxfordjournals.humrep.a137999",
+            "pmid": "8150920"
+          }
+        ]
+      },
+      "note": "a range, with n"
+    },
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "get",
+      "args": [
+        "bio:HUMAN-SEGMENTATION-CLOCK-PERIOD"
+      ],
+      "expected": {
+        "id": "bio:HUMAN-SEGMENTATION-CLOCK-PERIOD",
+        "version": "1.0.0",
+        "topic": "segmentation",
+        "quantity": "Period of the human segmentation clock in presomitic mesoderm cells derived in vitro",
+        "species": "Homo sapiens",
+        "kind": "period",
+        "value": 5,
+        "unit": "h",
+        "statistic": "approximate",
+        "stage": "Presomitic mesoderm induced in vitro from human pluripotent stem cells",
+        "method": "Time-lapse imaging of oscillating segmentation-clock gene expression (such as HES7) in presomitic mesoderm induced in vitro from pluripotent stem cells",
+        "notes": "Measured only in vitro: the human clock has not been recorded in an embryo. Matsuda et al. 2020 (Science) give 5-6 h.",
+        "contested": "Diaz-Cuadros et al. 2020 carries an Editor's Note (February 2024) about cell-tracking errors; its Author Correction (Nature 654:E13, 2026) states that the conclusions still hold.",
+        "sources": [
+          {
+            "key": "matsuda2020nature",
+            "cite": "Matsuda et al. 2020, Nature 580:124-129",
+            "title": "Recapitulating the human segmentation clock with pluripotent stem cells",
+            "doi": "10.1038/s41586-020-2144-9",
+            "pmid": "32238941"
+          },
+          {
+            "key": "diazcuadros2020",
+            "cite": "Diaz-Cuadros et al. 2020, Nature 580:113-118",
+            "title": "In vitro characterization of the human segmentation clock",
+            "doi": "10.1038/s41586-019-1885-9",
+            "pmid": "31915384"
+          },
+          {
+            "key": "matsuda2020science",
+            "cite": "Matsuda et al. 2020, Science 369:1450-1455",
+            "title": "Species-specific segmentation clock periods are due to differential biochemical reaction speeds",
+            "doi": "10.1126/science.aba7668",
+            "pmid": "32943519"
+          },
+          {
+            "key": "diazcuadros2026",
+            "cite": "Diaz-Cuadros et al. 2026, Nature 654:E13 (Author Correction)",
+            "title": "Author Correction: In vitro characterization of the human segmentation clock",
+            "doi": "10.1038/s41586-026-10651-z"
+          }
+        ]
+      },
+      "note": "four sources and a contested note"
+    },
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "get",
+      "args": [
+        "bio:HUMAN-EHR-9W"
+      ],
+      "expected": {
+        "id": "bio:HUMAN-EHR-9W",
+        "version": "1.0.0",
+        "topic": "heart",
+        "quantity": "Median human embryonic heart rate at 9 weeks of gestation",
+        "species": "Homo sapiens",
+        "kind": "rate",
+        "value": 176,
+        "unit": "bpm",
+        "statistic": "median",
+        "stage": "9 gestational weeks",
+        "method": "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week",
+        "n": 2267,
+        "n_unit": "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)",
+        "series": "human-heart-rate",
+        "at": 9,
+        "notes": "5th-95th percentile 162.4-188 bpm; the highest weekly median, after which the rate begins to fall.",
+        "sources": [
+          {
+            "key": "ouyang2020",
+            "cite": "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533",
+            "title": "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer",
+            "doi": "10.1186/s12884-020-03186-2",
+            "pmid": "32928137"
+          }
+        ]
+      },
+      "note": "a member of a series"
+    },
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "get",
+      "args": [
+        "bio:HUMAN-CA-SPIKE"
+      ],
+      "error": true,
+      "note": "unknown id"
+    },
+    {
+      "claim": "bio:IMPLEMENTATIONS-AGREE",
+      "fn": "get",
+      "args": [
+        "HUMAN-CA-SPIKE-INTERVAL"
+      ],
+      "error": true,
+      "note": "the prefix is part of the id"
+    }
+  ]
+}

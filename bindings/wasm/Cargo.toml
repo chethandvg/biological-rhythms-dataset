@@ -1,0 +1,23 @@
+[package]
+name = "biological-rhythms-dataset-wasm"
+version = "0.1.0"
+edition = "2024"
+license = "PolyForm-Noncommercial-1.0.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+biological_rhythms_dataset_rs = { package = "biological-rhythms-dataset", path = "../.." }
+# Pinned exactly: CI installs the wasm-bindgen CLI of this same version.
+wasm-bindgen = "=0.2.130"
+# JSON.parse, to return records as plain objects.
+js-sys = "0.3"
+
+[profile.release]
+opt-level = "s"
+lto = true
+
+# A separate workspace, so the core crate's `cargo test` never builds WebAssembly.
+[workspace]

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/chethandvg/biological-rhythms-dataset/schema/rhythms.schema.json",
+  "title": "biological-rhythms-dataset/rhythms@1",
+  "description": "data/rhythms.yaml after YAML merge keys are applied: measured frequencies and timings of early life, one entry per measurement in one species, each with its method and sources. scripts/build.py also checks what a schema cannot: unique ids, the species named in each id and description, known source keys, min < max, and consistent series.",
+  "type": "object",
+  "required": ["schema", "series", "rhythms"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "biological-rhythms-dataset/rhythms@1" },
+    "series": {
+      "description": "Named groups of entries that a helper function reads, with what each entry's `at` means.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["description", "at"],
+        "additionalProperties": false,
+        "properties": {
+          "description": { "type": "string", "minLength": 1 },
+          "at": { "type": "string", "minLength": 1, "description": "What `at` measures for entries in this series." },
+          "offset": { "type": "number", "description": "Added to each entry's `at` to give the position a helper reads it at, such as 0.5 to place the median of a completed week at mid-week. Default 0." }
+        }
+      }
+    },
+    "shared": {
+      "type": "object",
+      "description": "Field groups merged into entries with YAML merge keys. Not part of the data."
+    },
+    "rhythms": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/rhythm" } }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1 },
+    "positive": { "type": "number", "exclusiveMinimum": 0 },
+    "rhythm": {
+      "type": "object",
+      "required": ["id", "topic", "quantity", "species", "kind", "unit", "statistic", "stage", "method", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^bio:(HUMAN|MOUSE)-[A-Z0-9][A-Z0-9-]*$",
+          "description": "The claim id: permanent once published. HUMAN- or MOUSE- must match `species`."
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "The claim version (default 1.0.0). Bump the major version whenever the measurement's meaning changes."
+        },
+        "topic": { "enum": ["egg-activation", "sperm", "oviduct", "uterus", "preimplantation", "heart", "segmentation", "genome-activation"] },
+        "quantity": { "$ref": "#/$defs/text", "description": "What was measured, naming the species in plain words (human or mouse)." },
+        "species": { "enum": ["Homo sapiens", "Mus musculus"] },
+        "kind": {
+          "enum": ["period", "frequency", "rate", "duration", "time", "stage", "count"],
+          "description": "period: time between repeats; frequency: repeats per second; rate: repeats per minute; duration: length of one event; time: time after a reference event; stage: a number of cells; count: a number of things."
+        },
+        "value": { "$ref": "#/$defs/positive" },
+        "min": { "$ref": "#/$defs/positive" },
+        "max": { "$ref": "#/$defs/positive" },
+        "unit": { "enum": ["Hz", "s", "min", "h", "bpm", "/min", "cells", "sparks", "vesicles", "atoms"] },
+        "statistic": {
+          "enum": ["mean", "median", "range", "approximate", "estimate", "observed", "reported"],
+          "description": "What the number is: a mean or median, the range reported, an approximate or estimated value, the value observed, or the value as reported without a stated statistic."
+        },
+        "stage": { "$ref": "#/$defs/text", "description": "The developmental stage or condition measured." },
+        "method": { "$ref": "#/$defs/text" },
+        "n": { "type": "integer", "minimum": 1 },
+        "n_unit": { "$ref": "#/$defs/text", "description": "What n counts, e.g. 'cells from 3 donors'." },
+        "series": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "at": { "type": "number", "description": "This entry's position in its series, in the series' `at` units." },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9]*$" },
+          "description": "Keys in data/sources.yaml; the first is the source of the value."
+        },
+        "notes": { "$ref": "#/$defs/text" },
+        "contested": { "$ref": "#/$defs/text", "description": "Why the value is disputed or has been revised, with the sources that disagree." }
+      },
+      "oneOf": [
+        { "required": ["value"], "not": { "anyOf": [{ "required": ["min"] }, { "required": ["max"] }] } },
+        { "required": ["min", "max"], "not": { "required": ["value"] } }
+      ],
+      "dependentRequired": { "n": ["n_unit"], "n_unit": ["n"], "series": ["at"], "at": ["series"] },
+      "allOf": [
+        { "if": { "properties": { "kind": { "enum": ["period", "duration", "time"] } } }, "then": { "properties": { "unit": { "enum": ["s", "min", "h"] } } } },
+        { "if": { "properties": { "kind": { "const": "frequency" } } }, "then": { "properties": { "unit": { "const": "Hz" } } } },
+        { "if": { "properties": { "kind": { "const": "rate" } } }, "then": { "properties": { "unit": { "enum": ["bpm", "/min"] } } } },
+        { "if": { "properties": { "kind": { "const": "stage" } } }, "then": { "properties": { "unit": { "const": "cells" } } } },
+        { "if": { "properties": { "kind": { "const": "count" } } }, "then": { "properties": { "unit": { "enum": ["cells", "sparks", "vesicles", "atoms"] } } } }
+      ]
+    }
+  }
+}

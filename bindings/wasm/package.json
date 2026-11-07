@@ -1,0 +1,22 @@
+{
+  "name": "@chethandvg/biological-rhythms-dataset",
+  "version": "0.1.0",
+  "description": "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI.",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "author": "Chethan Dandebala Venkatarama",
+  "homepage": "https://chethandvg.github.io/frequencies-of-life/repos/biological-rhythms-dataset/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chethandvg/biological-rhythms-dataset.git",
+    "directory": "bindings/wasm"
+  },
+  "keywords": ["dataset", "biology", "fertilization", "embryology", "reproducibility", "sonification"],
+  "private": true,
+  "scripts": {
+    "build": "cargo build --release --target wasm32-unknown-unknown && wasm-bindgen --target nodejs --out-dir pkg/node target/wasm32-unknown-unknown/release/biological_rhythms_dataset_wasm.wasm && wasm-bindgen --target web --out-dir pkg/web target/wasm32-unknown-unknown/release/biological_rhythms_dataset_wasm.wasm",
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "devDependencies": {
+    "golden-vectors": "github:chethandvg/evidence-kernel#v0.1.0"
+  }
+}

@@ -1,0 +1,440 @@
+# Biological rhythms dataset: the one hand-edited file of measurements (licence CC BY-NC 4.0).
+#
+# Each entry is one measurement in one species, and becomes one R claim in claims.yaml; its id is
+# the claim id and never changes. Source keys point to data/sources.yaml. After editing, run
+#
+#     python scripts/build.py
+#
+# to regenerate data/rhythms.json, data/rhythms.csv, the R claims in claims.yaml and the README
+# measurement tables. It then runs `ek readme-table claims.yaml README.md --write` to refresh the
+# README claims table as well, when the ek CLI (evidence-kernel) is installed; otherwise run that
+# command yourself. CI runs `python scripts/build.py --check` and `ek readme-table --check`.
+# Schema: schema/rhythms.schema.json.
+#
+# Fields shared by several entries are written once under `shared` and merged into each entry with
+# a YAML merge key (`<<: *name`); a field written in the entry itself wins.
+
+schema: biological-rhythms-dataset/rhythms@1
+
+series:
+  human-heart-rate:
+    description: "Median embryonic heart rate by gestational week (Ouyang et al. 2020). heart_rate_at() places the median of week w at w + offset, the middle of the completed week it is taken to cover (the model assumption bio:HEART-RATE-WEEK-PLACEMENT), and interpolates linearly between neighbouring medians."
+    at: gestational week, as the paper labels it
+    offset: 0.5
+  human-cleavage:
+    description: "Mean time from insemination until the embryo reaches each number of cells from 2 to 8 (Lorenzo Rodríguez et al. 2026). cell_count_at() is the step function over these times."
+    at: number of cells
+
+shared:
+  taylor1993: &taylor1993
+    topic: egg-activation
+    species: Homo sapiens
+    stage: "Oocyte donated during IVF treatment, inseminated in vitro"
+    method: "Aequorin Ca2+ measurement with a photomultiplier in eggs donated during IVF treatment, zona-intact and zona-free, inseminated under perfusion"
+    n: 10
+    n_unit: "eggs with Ca2+ transients, of 26 inseminated"
+    sources: [taylor1993]
+  kline1992: &kline1992
+    topic: egg-activation
+    species: Mus musculus
+    statistic: mean
+    stage: "Zona-free egg, fertilised in vitro"
+    method: "Fluo-3 Ca2+ imaging of zona-free eggs during in vitro fertilisation"
+    sources: [kline1992]
+  que2015: &que2015
+    topic: egg-activation
+    species: Mus musculus
+    kind: count
+    stage: "Mature (MII) egg"
+    method: "Live zinc-probe imaging, scanning transmission electron microscopy with energy-dispersive spectroscopy, and X-ray fluorescence microscopy and tomography"
+    sources: [que2015]
+  gallagher2019: &gallagher2019
+    topic: sperm
+    species: Homo sapiens
+    kind: frequency
+    unit: Hz
+    statistic: median
+    method: "High-speed imaging at 169.2 frames/s with automated flagellar tracking (FAST) of free-swimming progressive cells; three donors in total"
+    n_unit: "cells"
+    sources: [gallagher2019]
+  ooi2014: &ooi2014
+    topic: sperm
+    species: Homo sapiens
+    kind: frequency
+    unit: Hz
+    statistic: median
+    method: "High-speed imaging at 332 frames/s of head-adhered cells at 21 °C, the same cells before and after 4-aminopyridine (4-AP)"
+    n: 34
+    n_unit: "cells from 4 donors"
+    sources: [ooi2014]
+  rees2023: &rees2023
+    topic: uterus
+    species: Homo sapiens
+    kind: rate
+    unit: /min
+    statistic: reported
+    method: "Four-minute transvaginal ultrasound recordings analysed by speckle tracking; contraction frequency of the posterior uterine wall"
+    n: 70
+    n_unit: "recordings analysed across all phases together, of 96 from 64 healthy women with natural cycles; the number in each phase is not recorded here"
+    sources: [rees2023]
+  lorenzo2026: &lorenzo2026
+    topic: preimplantation
+    species: Homo sapiens
+    kind: time
+    unit: h
+    statistic: mean
+    method: "Time-lapse imaging of embryos from oocyte-donation cycles fertilised with fresh ejaculated partner sperm (mostly ICSI); single-centre retrospective cohort of 469 cycles, 2013-2020"
+    n: 2523
+    n_unit: "correctly fertilised oocytes in the fresh-sperm group (the group size, not the number of embryos timed at each stage, which is not recorded here)"
+    notes: "Hours after insemination; fresh-sperm group, Table 5 of the paper."
+    sources: [lorenzo2026]
+  lorenzo2026-cleavage: &lorenzo2026-cleavage
+    <<: *lorenzo2026
+    series: human-cleavage
+  ouyang2020: &ouyang2020
+    topic: heart
+    species: Homo sapiens
+    kind: rate
+    unit: bpm
+    statistic: median
+    method: "Early ultrasound measurements in singleton IVF-ET pregnancies with phenotypically normal live births after 37 weeks, 2010-2016; 5th, 50th and 95th percentiles by gestational week"
+    n_unit: "pregnancies measured in this gestational week (Table 3 of the paper; 30,416 across weeks 6-10)"
+    series: human-heart-rate
+    sources: [ouyang2020]
+  segmentation: &segmentation
+    topic: segmentation
+    kind: period
+    unit: h
+    method: "Time-lapse imaging of oscillating segmentation-clock gene expression (such as HES7) in presomitic mesoderm induced in vitro from pluripotent stem cells"
+  zga: &zga
+    topic: genome-activation
+    kind: stage
+    unit: cells
+
+rhythms:
+  # Egg activation: Ca2+ spikes and zinc sparks
+  - <<: *taylor1993
+    id: bio:HUMAN-CA-SPIKE-INTERVAL
+    quantity: "Interval between Ca2+ spikes in human eggs at fertilisation"
+    kind: period
+    min: 10
+    max: 35
+    unit: min
+    statistic: range
+    notes: "Amplitude (up to 2.5 µM), duration and interval were similar in zona-intact and zona-free eggs. Only 10 of 26 inseminated eggs responded."
+  - <<: *taylor1993
+    id: bio:HUMAN-CA-SPIKE-DURATION
+    quantity: "Duration of each Ca2+ spike in human eggs at fertilisation"
+    kind: duration
+    value: 120
+    unit: s
+    statistic: approximate
+    notes: "Amplitude up to 2.5 µM, measured with aequorin."
+  - <<: *kline1992
+    id: bio:MOUSE-CA-SPIKE-INTERVAL
+    quantity: "Interval between Ca2+ transients in mouse eggs at fertilisation"
+    kind: period
+    value: 3.4
+    unit: min
+    notes: "Reported as 3.4 ± 1.4 min. Mouse intervals depend on the conditions; compare bio:MOUSE-ZINC-SPARK-INTERVAL."
+  - <<: *kline1992
+    id: bio:MOUSE-CA-FIRST-TRANSIENT-DURATION
+    quantity: "Duration of the first Ca2+ transient in mouse eggs at fertilisation"
+    kind: duration
+    value: 2.3
+    unit: min
+    notes: "Reported as 2.3 ± 0.6 min; the first transient lasts longer than the ones that follow."
+  - <<: *kline1992
+    id: bio:MOUSE-CA-SPIKE-DURATION
+    quantity: "Duration of each later Ca2+ transient in mouse eggs at fertilisation"
+    kind: duration
+    value: 0.5
+    unit: min
+    notes: "Reported as 0.5 ± 0.1 min."
+  - id: bio:MOUSE-ZINC-SPARK-INTERVAL
+    topic: egg-activation
+    quantity: "Interval between zinc sparks in activated mouse eggs"
+    species: Mus musculus
+    kind: period
+    value: 9.5
+    unit: min
+    statistic: mean
+    stage: "Mature (MII) egg, mostly activated parthenogenetically with SrCl2"
+    method: "Imaging of zinc released into the medium with an extracellular zinc dye, alongside intracellular Ca2+ imaging"
+    n: 36
+    n_unit: "intervals between sparks"
+    sources: [kim2011]
+    notes: "Mean ± SEM 9.5 ± 0.8 min, range 3.46-26.00 min. Each spark followed a Ca2+ transient; eggs gave 1-5 sparks, all within about the first 90 min. Most eggs were activated with strontium, not sperm."
+  - <<: *que2015
+    id: bio:MOUSE-EGG-ZINC-VESICLES
+    quantity: "Number of zinc-loaded cortical vesicles in a mouse egg"
+    value: 8000
+    unit: vesicles
+    statistic: estimate
+    notes: "An extrapolated estimate. More than 90% of the vesicles lie within 5 µm of the plasma membrane."
+  - <<: *que2015
+    id: bio:MOUSE-ZINC-VESICLE-ATOMS
+    quantity: "Zinc atoms in one cortical vesicle of a mouse egg"
+    value: 1000000
+    unit: atoms
+    statistic: approximate
+    notes: "About 10^6 atoms per vesicle on average, so the vesicles together hold about 8 × 10^9 atoms, roughly 15% of the egg's zinc."
+  - id: bio:HUMAN-ZINC-SPARKS-PER-EGG
+    topic: egg-activation
+    quantity: "Number of zinc sparks in a human egg activated with PLCζ"
+    species: Homo sapiens
+    kind: count
+    value: 1
+    unit: sparks
+    statistic: observed
+    stage: "Egg matured in vitro and activated without sperm, by injection of hPLCζ cRNA"
+    method: "Fluo-4 Ca2+ imaging and extracellular FluoZin-3 zinc imaging of discarded immature eggs from ICSI cycles, mostly matured in vitro; other eggs in the study were activated with Ca-ionomycin or ionomycin"
+    n: 2
+    n_unit: "eggs that sparked, of 5 injected with hPLCζ cRNA"
+    sources: [duncan2016, que2019]
+    notes: "The spark is tightly coordinated with the first Ca2+ transient. These eggs were activated artificially; the human zinc spark has not been shown at fertilisation by sperm. Que et al. 2019, a bovine study, is cited only for its statement that the zinc spark has been documented in humans; the value of 1 spark is from Duncan et al. 2016."
+
+  # Sperm flagellar beat
+  - <<: *gallagher2019
+    id: bio:HUMAN-SPERM-BEAT-DILUTED-SEMEN
+    quantity: "Flagellar beat frequency of human sperm swimming in diluted semen"
+    value: 19
+    stage: "Progressive, free-swimming sperm in diluted semen (low viscosity)"
+    n: 205
+    notes: "IQR 6.5 Hz. The CASA 'beat-cross frequency' does not measure this: a straight-line fit between the two gave R² = 0.042."
+  - <<: *gallagher2019
+    id: bio:HUMAN-SPERM-BEAT-VISCOUS
+    quantity: "Flagellar beat frequency of human sperm swimming in a high-viscosity medium"
+    value: 10
+    stage: "Progressive, free-swimming sperm in high-viscosity methylcellulose medium"
+    n: 119
+    notes: "IQR 2.9 Hz, about half the beat frequency in diluted semen (bio:HUMAN-SPERM-BEAT-DILUTED-SEMEN)."
+  - <<: *ooi2014
+    id: bio:HUMAN-SPERM-BEAT-ADHERED
+    quantity: "Flagellar beat frequency of head-adhered human sperm before stimulation"
+    value: 18.9
+    stage: "Head-adhered sperm in low-viscosity medium, before stimulation"
+    notes: "IQR 15.0-24.2 Hz. The same cells as bio:HUMAN-SPERM-BEAT-HYPERACTIVATED."
+  - <<: *ooi2014
+    id: bio:HUMAN-SPERM-BEAT-HYPERACTIVATED
+    quantity: "Flagellar beat frequency of head-adhered human sperm hyperactivated with 4-AP"
+    value: 11.7
+    stage: "Head-adhered sperm after hyperactivation with 4-aminopyridine"
+    notes: "IQR 9.9-14.6 Hz. Ooi et al. report a change of -36% from the same cells before stimulation (the two medians alone differ by 38%), while the RMS bending angle rose from 25.4° to 46.7°. 4-AP is a drug trigger, not physiological capacitation; 13 of the 34 cells beat with several frequency modes."
+
+  # Oviduct cilia
+  - id: bio:HUMAN-OVIDUCT-CILIA-BEAT
+    topic: oviduct
+    quantity: "Ciliary beat frequency in the human fallopian tube"
+    species: Homo sapiens
+    kind: frequency
+    value: 5.3
+    unit: Hz
+    statistic: mean
+    stage: "Fallopian tube epithelium ex vivo, proliferative and secretory phases"
+    method: "Light-intensity variation recording of ciliary beating in tubes removed at hysterectomy for benign conditions"
+    n: 26
+    n_unit: "women (14 in the proliferative, 12 in the secretory phase)"
+    sources: [lyons2002, bylander2010]
+    notes: "Reported as 5.3 ± 0.2 Hz. No significant difference between anatomical sites; in the fimbria the beat was faster in the secretory phase (5.8 Hz) than in the proliferative phase (4.9 Hz)."
+    contested: "Bylander et al. 2010, a mouse study, quote 5-20 Hz for the human tube, citing older human studies by Mahmood et al. (1998) and Westrom et al.; this direct measurement lies at the low end of that range."
+  - id: bio:MOUSE-OVIDUCT-CILIA-BEAT
+    topic: oviduct
+    quantity: "Ciliary beat frequency in the mouse fallopian tube"
+    species: Mus musculus
+    kind: frequency
+    value: 23.3
+    unit: Hz
+    statistic: mean
+    stage: "Fallopian tube pieces ex vivo, before any hormone was added"
+    method: "High-speed bright-field imaging at 35 °C of tube pieces held still by a motorised needle"
+    n: 19
+    n_unit: "mice"
+    sources: [bylander2010]
+    notes: "Reported as 23.3 ± 3.8 Hz (range 16.8-31.9 Hz). Progesterone at 100 nM lowered it by 15% compared with controls after 30 min."
+
+  # Uterine contractions
+  - <<: *rees2023
+    id: bio:HUMAN-UTERINE-CONTRACTIONS-LATE-FOLLICULAR
+    quantity: "Human uterine contraction frequency in the late follicular phase"
+    value: 1.61
+    stage: "Natural menstrual cycle, late follicular phase"
+    notes: "The highest frequency of the cycle phases compared."
+  - <<: *rees2023
+    id: bio:HUMAN-UTERINE-CONTRACTIONS-MENSTRUAL
+    quantity: "Human uterine contraction frequency in the menstrual phase"
+    value: 1.31
+    stage: "Natural menstrual cycle, menstrual phase"
+  - <<: *rees2023
+    id: bio:HUMAN-UTERINE-CONTRACTIONS-LATE-LUTEAL
+    quantity: "Human uterine contraction frequency in the late luteal phase"
+    value: 1.35
+    stage: "Natural menstrual cycle, late luteal phase"
+
+  # Preimplantation timing (morphokinetics)
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T2
+    quantity: "Time from insemination to the 2-cell stage (t2) in human embryos"
+    value: 27.48
+    stage: "2 cells"
+    at: 2
+    notes: "Hours after insemination; fresh-sperm group, Table 5 of the paper, which gives 27.26-27.71 h in brackets."
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T3
+    quantity: "Time from insemination to the 3-cell stage (t3) in human embryos"
+    value: 37.78
+    stage: "3 cells"
+    at: 3
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T4
+    quantity: "Time from insemination to the 4-cell stage (t4) in human embryos"
+    value: 40.40
+    stage: "4 cells"
+    at: 4
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T5
+    quantity: "Time from insemination to the 5-cell stage (t5) in human embryos"
+    value: 51.04
+    stage: "5 cells"
+    at: 5
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T6
+    quantity: "Time from insemination to the 6-cell stage (t6) in human embryos"
+    value: 54.25
+    stage: "6 cells"
+    at: 6
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T7
+    quantity: "Time from insemination to the 7-cell stage (t7) in human embryos"
+    value: 57.57
+    stage: "7 cells"
+    at: 7
+  - <<: *lorenzo2026-cleavage
+    id: bio:HUMAN-EMBRYO-T8
+    quantity: "Time from insemination to the 8-cell stage (t8) in human embryos"
+    value: 61.51
+    stage: "8 cells"
+    at: 8
+  - <<: *lorenzo2026
+    id: bio:HUMAN-EMBRYO-TM
+    quantity: "Time from insemination to compaction (tM, morula) in human embryos"
+    value: 87.75
+    stage: "Morula, compaction complete"
+  - <<: *lorenzo2026
+    id: bio:HUMAN-EMBRYO-TSB
+    quantity: "Time from insemination to the start of blastulation (tSB) in human embryos"
+    value: 99.18
+    stage: "Start of blastulation"
+  - <<: *lorenzo2026
+    id: bio:HUMAN-EMBRYO-TB
+    quantity: "Time from insemination to the full blastocyst (tB) in human embryos"
+    value: 104.50
+    stage: "Full blastocyst"
+  - <<: *lorenzo2026
+    id: bio:HUMAN-EMBRYO-TEB
+    quantity: "Time from insemination to the expanded blastocyst (tEB) in human embryos"
+    value: 110.82
+    stage: "Expanded blastocyst"
+
+  # Embryonic heart rate
+  - <<: *ouyang2020
+    id: bio:HUMAN-EHR-6W
+    quantity: "Median human embryonic heart rate at 6 weeks of gestation"
+    value: 117
+    stage: "6 gestational weeks"
+    at: 6
+    n: 20272
+    notes: "5th-95th percentile 103-128 bpm."
+  - <<: *ouyang2020
+    id: bio:HUMAN-EHR-7W
+    quantity: "Median human embryonic heart rate at 7 weeks of gestation"
+    value: 146
+    stage: "7 gestational weeks"
+    at: 7
+    n: 2969
+  - <<: *ouyang2020
+    id: bio:HUMAN-EHR-8W
+    quantity: "Median human embryonic heart rate at 8 weeks of gestation"
+    value: 174
+    stage: "8 gestational weeks"
+    at: 8
+    n: 4109
+  - <<: *ouyang2020
+    id: bio:HUMAN-EHR-9W
+    quantity: "Median human embryonic heart rate at 9 weeks of gestation"
+    value: 176
+    stage: "9 gestational weeks"
+    at: 9
+    n: 2267
+    notes: "5th-95th percentile 162.4-188 bpm; the highest weekly median, after which the rate begins to fall."
+  - <<: *ouyang2020
+    id: bio:HUMAN-EHR-10W
+    quantity: "Median human embryonic heart rate at 10 weeks of gestation"
+    value: 174
+    stage: "10 gestational weeks"
+    at: 10
+    n: 799
+
+  # Segmentation clock
+  - <<: *segmentation
+    id: bio:HUMAN-SEGMENTATION-CLOCK-PERIOD
+    quantity: "Period of the human segmentation clock in presomitic mesoderm cells derived in vitro"
+    species: Homo sapiens
+    value: 5
+    statistic: approximate
+    stage: "Presomitic mesoderm induced in vitro from human pluripotent stem cells"
+    sources: [matsuda2020nature, diazcuadros2020, matsuda2020science, diazcuadros2026]
+    notes: "Measured only in vitro: the human clock has not been recorded in an embryo. Matsuda et al. 2020 (Science) give 5-6 h."
+    contested: "Diaz-Cuadros et al. 2020 carries an Editor's Note (February 2024) about cell-tracking errors; its Author Correction (Nature 654:E13, 2026) states that the conclusions still hold."
+  - <<: *segmentation
+    id: bio:MOUSE-SEGMENTATION-CLOCK-PERIOD
+    quantity: "Period of the mouse segmentation clock in presomitic mesoderm cells derived in vitro"
+    species: Mus musculus
+    min: 2
+    max: 3
+    statistic: range
+    stage: "Presomitic mesoderm induced in vitro from mouse pluripotent stem cells"
+    sources: [matsuda2020science, diazcuadros2020, diazcuadros2026]
+    notes: "The 2-3 h range is from Matsuda et al. 2020 (Science). Diaz-Cuadros et al. 2020 measured 2.5 h in mouse cells, half the human period in the same study; that paper carries the same Editor's Note (February 2024) and Author Correction (Nature 654:E13, 2026) as bio:HUMAN-SEGMENTATION-CLOCK-PERIOD, and the correction states that its conclusions still hold."
+
+  # Zygotic (embryonic) genome activation
+  - <<: *zga
+    id: bio:HUMAN-MAJOR-ZGA-STAGE
+    quantity: "Cell stage of major embryonic genome activation in human embryos"
+    species: Homo sapiens
+    min: 4
+    max: 8
+    statistic: range
+    stage: "Preimplantation embryo, between the 4- and 8-cell stages"
+    method: "Patterns of newly synthesised polypeptides in IVF embryos and their dependence on transcription"
+    sources: [braude1988, asami2022]
+    notes: "Cleavage is not sensitive to transcriptional inhibition until after the 4-cell stage."
+    contested: "Revised in part: low-level transcription begins earlier, at the one-cell stage (Asami et al. 2022; bio:HUMAN-MINOR-ZGA-STAGE). The major wave is still placed at 4-8 cells."
+  - <<: *zga
+    id: bio:HUMAN-MINOR-ZGA-STAGE
+    quantity: "Cell stage at which human embryonic transcription begins (minor genome activation)"
+    species: Homo sapiens
+    value: 1
+    statistic: observed
+    stage: "Bipronuclear one-cell embryo (zygote)"
+    method: "High-resolution single-cell RNA sequencing of MII oocytes and bipronuclear one-cell embryos"
+    sources: [asami2022]
+    notes: "Low-magnitude upregulation of hundreds of spliced transcripts."
+  - <<: *zga
+    id: bio:MOUSE-MAJOR-ZGA-STAGE
+    quantity: "Cell stage of major zygotic genome activation in mouse embryos"
+    species: Mus musculus
+    value: 2
+    statistic: reported
+    stage: "Mid-to-late 2-cell embryo, after the second round of DNA replication"
+    method: "Review of transcriptome and transcription-inhibition studies of mouse embryos"
+    sources: [aoki2022, braude1988]
+  - <<: *zga
+    id: bio:MOUSE-MINOR-ZGA-STAGE
+    quantity: "Cell stage of minor zygotic genome activation in mouse embryos"
+    species: Mus musculus
+    value: 1
+    statistic: reported
+    stage: "Mid one-cell embryo (zygote)"
+    method: "Review of transcriptome and transcription-inhibition studies of mouse embryos"
+    sources: [aoki2022]

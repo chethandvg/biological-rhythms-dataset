@@ -1,0 +1,25 @@
+[build-system]
+requires = ["maturin>=1.16,<2"]
+build-backend = "maturin"
+
+[project]
+name = "biological-rhythms-dataset"
+version = "0.1.0"
+description = "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI."
+readme = "README.md"
+license = "PolyForm-Noncommercial-1.0.0"
+authors = [{ name = "Chethan Dandebala Venkatarama" }]
+requires-python = ">=3.10"
+keywords = ["dataset", "biology", "fertilization", "embryology", "reproducibility", "sonification"]
+classifiers = [
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Homepage = "https://chethandvg.github.io/frequencies-of-life/repos/biological-rhythms-dataset/"
+Repository = "https://github.com/chethandvg/biological-rhythms-dataset"
+
+[tool.maturin]
+module-name = "biological_rhythms_dataset"

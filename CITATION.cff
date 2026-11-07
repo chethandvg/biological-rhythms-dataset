@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using these metadata."
+type: dataset
+title: "Biological rhythms dataset"
+abstract: "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI."
+authors:
+  - given-names: "Chethan"
+    family-names: "Dandebala Venkatarama"
+    alias: "chethandvg"
+    orcid: "https://orcid.org/0009-0006-6099-343X"
+repository-code: "https://github.com/chethandvg/biological-rhythms-dataset"
+url: "https://chethandvg.github.io/frequencies-of-life/repos/biological-rhythms-dataset/"
+license:
+  - PolyForm-Noncommercial-1.0.0
+  - CC-BY-NC-4.0
+version: 0.1.0
+date-released: "2026-11-07"
+keywords:
+  - dataset
+  - biology
+  - fertilization
+  - embryology
+  - reproducibility
+  - sonification
+  - morphokinetics
+  - heart rate
+  - calcium oscillations

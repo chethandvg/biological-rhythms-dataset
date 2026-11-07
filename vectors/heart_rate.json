@@ -1,0 +1,159 @@
+{
+  "schema": "golden-vectors@1",
+  "description": "heart_rate_at: exact at each weekly median, placed at mid-week (6.5 to 10.5 weeks), linear in between, rejected outside 6.5-10.5 weeks.",
+  "tolerance": {
+    "rel": 1e-15,
+    "abs": 0.0
+  },
+  "cases": [
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        6.5
+      ],
+      "expected": 117.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        6.75
+      ],
+      "expected": 124.25
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        7.0
+      ],
+      "expected": 131.5
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        7.5
+      ],
+      "expected": 146.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        7.8
+      ],
+      "expected": 154.4
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        8.0
+      ],
+      "expected": 160.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        8.5
+      ],
+      "expected": 174.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        8.833333333333334
+      ],
+      "expected": 174.66666666666666
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        9.0
+      ],
+      "expected": 175.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        9.5
+      ],
+      "expected": 176.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        9.6
+      ],
+      "expected": 175.8
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        10.25
+      ],
+      "expected": 174.5
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        10.5
+      ],
+      "expected": 174.0
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        6.0
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        6.499
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        10.501
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        12.0
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:HEART-RATE-AT",
+      "fn": "heart_rate_at",
+      "args": [
+        -1.0
+      ],
+      "error": true,
+      "note": "not measured"
+    }
+  ]
+}

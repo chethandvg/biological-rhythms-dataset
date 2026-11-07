@@ -1,0 +1,206 @@
+{
+  "schema": "golden-vectors@1",
+  "description": "cell_count_at: the step function over the mean division times t2-t8, rejected outside 0-t8.",
+  "tolerance": {
+    "rel": 0.0,
+    "abs": 0.0
+  },
+  "cases": [
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        0.0
+      ],
+      "expected": 1
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        12.0
+      ],
+      "expected": 1
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        27.47
+      ],
+      "expected": 1
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        27.48
+      ],
+      "expected": 2
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        30.0
+      ],
+      "expected": 2
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        37.77
+      ],
+      "expected": 2
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        37.78
+      ],
+      "expected": 3
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        39.0
+      ],
+      "expected": 3
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        40.39
+      ],
+      "expected": 3
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        40.4
+      ],
+      "expected": 4
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        45.0
+      ],
+      "expected": 4
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        51.03
+      ],
+      "expected": 4
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        51.04
+      ],
+      "expected": 5
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        54.24
+      ],
+      "expected": 5
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        54.25
+      ],
+      "expected": 6
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        57.56
+      ],
+      "expected": 6
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        57.57
+      ],
+      "expected": 7
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        60.0
+      ],
+      "expected": 7
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        61.5
+      ],
+      "expected": 7
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        61.51
+      ],
+      "expected": 8
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        -0.5
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        61.52
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        87.75
+      ],
+      "error": true,
+      "note": "not measured"
+    },
+    {
+      "claim": "bio:CELL-COUNT-AT",
+      "fn": "cell_count_at",
+      "args": [
+        110.0
+      ],
+      "error": true,
+      "note": "not measured"
+    }
+  ]
+}

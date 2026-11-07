@@ -1,0 +1,27 @@
+[package]
+name = "biological-rhythms-dataset"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Measured frequencies and timings of early life, from sperm tail beat to embryonic heart rate, each value with its species, method and DOI."
+license = "PolyForm-Noncommercial-1.0.0"
+authors = ["Chethan Dandebala Venkatarama"]
+repository = "https://github.com/chethandvg/biological-rhythms-dataset"
+homepage = "https://chethandvg.github.io/frequencies-of-life/repos/biological-rhythms-dataset/"
+readme = "README.md"
+keywords = ["dataset", "biology", "fertilization", "embryology", "reproducibility"]
+categories = ["science"]
+include = ["/src", "/data/rhythms.json", "/README.md", "/LICENSE", "/LICENSES", "/NOTICE", "/CHANGELOG.md"]
+
+[dependencies]
+rhythm-units = { git = "https://github.com/chethandvg/rhythm-units", tag = "v0.1.0" }
+serde = { version = "1.0.228", features = ["derive"] }
+# float_roundtrip parses every number in data/rhythms.json exactly.
+serde_json = { version = "1.0.154", features = ["float_roundtrip"] }
+
+[dev-dependencies]
+golden-vectors = { git = "https://github.com/chethandvg/evidence-kernel", tag = "v0.1.0" }
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"

@@ -1,0 +1,103 @@
+# References for data/rhythms.yaml, by key. Each source was checked by DOI against Crossref and,
+# where it has one, by PMID against PubMed. Schema: schema/sources.schema.json. Licence: CC BY-NC 4.0.
+# CI re-resolves every DOI and PMID (`ek resolve claims.yaml`) weekly and fails on a retraction.
+
+aoki2022:
+  cite: "Aoki 2022, Journal of Reproduction and Development 68(2):79-84"
+  title: "Zygotic gene activation in mice: profile and regulation"
+  doi: "10.1262/jrd.2021-129"
+  pmid: "35034936"
+asami2022:
+  cite: "Asami et al. 2022, Cell Stem Cell 29(2):209-216"
+  title: "Human embryonic genome activation initiates at the one-cell stage"
+  doi: "10.1016/j.stem.2021.11.012"
+  pmid: "34936886"
+braude1988:
+  cite: "Braude et al. 1988, Nature 332:459-461"
+  title: "Human gene expression first occurs between the four- and eight-cell stages of preimplantation development"
+  doi: "10.1038/332459a0"
+  pmid: "3352746"
+bylander2010:
+  cite: "Bylander et al. 2010, Reproductive Biology and Endocrinology 8:48"
+  title: "Rapid effects of progesterone on ciliary beat frequency in the mouse fallopian tube"
+  doi: "10.1186/1477-7827-8-48"
+  pmid: "20470431"
+diazcuadros2020:
+  cite: "Diaz-Cuadros et al. 2020, Nature 580:113-118"
+  title: "In vitro characterization of the human segmentation clock"
+  doi: "10.1038/s41586-019-1885-9"
+  pmid: "31915384"
+diazcuadros2026:
+  cite: "Diaz-Cuadros et al. 2026, Nature 654:E13 (Author Correction)"
+  title: "Author Correction: In vitro characterization of the human segmentation clock"
+  doi: "10.1038/s41586-026-10651-z"
+duncan2016:
+  cite: "Duncan et al. 2016, Scientific Reports 6:24737"
+  title: "The zinc spark is an inorganic signature of human egg activation"
+  doi: "10.1038/srep24737"
+  pmid: "27113677"
+gallagher2019:
+  cite: "Gallagher et al. 2019, Human Reproduction 34(7):1173-1185"
+  title: "Rapid sperm capture: high-throughput flagellar waveform analysis"
+  doi: "10.1093/humrep/dez056"
+  pmid: "31170729"
+kim2011:
+  cite: "Kim et al. 2011, ACS Chemical Biology 6(7):716-723"
+  title: "Zinc sparks are triggered by fertilization and facilitate cell cycle resumption in mammalian eggs"
+  doi: "10.1021/cb200084y"
+  pmid: "21526836"
+kline1992:
+  cite: "Kline & Kline 1992, Developmental Biology 149(1):80-89"
+  title: "Repetitive calcium transients and the role of calcium in exocytosis and cell cycle activation in the mouse egg"
+  doi: "10.1016/0012-1606(92)90265-i"
+  pmid: "1728596"
+lorenzo2026:
+  cite: "Lorenzo Rodríguez et al. 2026, JBRA Assisted Reproduction 30(2):258-267"
+  title: "Influence of seminal cryopreservation on embryo kinetics: image analysis and clinical outcomes"
+  doi: "10.5935/1518-0557.20260005"
+  pmid: "41842690"
+lyons2002:
+  cite: "Lyons et al. 2002, Human Reproduction 17(3):584-588"
+  title: "Fallopian tube ciliary beat frequency in relation to the stage of menstrual cycle and anatomical site"
+  doi: "10.1093/humrep/17.3.584"
+  pmid: "11870107"
+matsuda2020nature:
+  cite: "Matsuda et al. 2020, Nature 580:124-129"
+  title: "Recapitulating the human segmentation clock with pluripotent stem cells"
+  doi: "10.1038/s41586-020-2144-9"
+  pmid: "32238941"
+matsuda2020science:
+  cite: "Matsuda et al. 2020, Science 369:1450-1455"
+  title: "Species-specific segmentation clock periods are due to differential biochemical reaction speeds"
+  doi: "10.1126/science.aba7668"
+  pmid: "32943519"
+ooi2014:
+  cite: "Ooi et al. 2014, Royal Society Open Science 1(2):140230"
+  title: "The mechanics of hyperactivation in adhered human sperm"
+  doi: "10.1098/rsos.140230"
+  pmid: "26064546"
+ouyang2020:
+  cite: "Ouyang et al. 2020, BMC Pregnancy and Childbirth 20:533"
+  title: "Reference intervals of gestational sac, yolk sac, embryonic length, embryonic heart rate at 6-10 weeks after in vitro fertilization-embryo transfer"
+  doi: "10.1186/s12884-020-03186-2"
+  pmid: "32928137"
+que2015:
+  cite: "Que et al. 2015, Nature Chemistry 7(2):130-139"
+  title: "Quantitative mapping of zinc fluxes in the mammalian egg reveals the origin of fertilization-induced zinc sparks"
+  doi: "10.1038/nchem.2133"
+  pmid: "25615666"
+que2019:
+  cite: "Que et al. 2019, Theriogenology 127:41-48"
+  title: "Bovine eggs release zinc in response to parthenogenetic and sperm-induced egg activation"
+  doi: "10.1016/j.theriogenology.2018.12.031"
+  pmid: "30639695"
+rees2023:
+  cite: "Rees et al. 2023, Reproductive BioMedicine Online 46(1):115-122"
+  title: "Uterine contractile activity in healthy women throughout the menstrual cycle measured using a novel quantitative two-dimensional transvaginal ultrasound speckle tracking method"
+  doi: "10.1016/j.rbmo.2022.08.104"
+  pmid: "36244894"
+taylor1993:
+  cite: "Taylor et al. 1993, Human Reproduction 8(12):2174-2179"
+  title: "Oscillations in intracellular free calcium induced by spermatozoa in human oocytes at fertilization"
+  doi: "10.1093/oxfordjournals.humrep.a137999"
+  pmid: "8150920"

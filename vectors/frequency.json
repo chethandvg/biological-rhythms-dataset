@@ -1,0 +1,436 @@
+{
+  "schema": "golden-vectors@1",
+  "description": "frequency_hz for every record: periods, frequencies and rates in hertz; everything else rejected.",
+  "tolerance": {
+    "rel": 1e-15,
+    "abs": 0.0
+  },
+  "cases": [
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-CA-SPIKE-INTERVAL"
+      ],
+      "expected": [
+        0.0004761904761904762,
+        0.0016666666666666668
+      ],
+      "note": "period"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-CA-SPIKE-DURATION"
+      ],
+      "error": true,
+      "note": "duration"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-CA-SPIKE-INTERVAL"
+      ],
+      "expected": [
+        0.004901960784313725,
+        0.004901960784313725
+      ],
+      "note": "period"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-CA-FIRST-TRANSIENT-DURATION"
+      ],
+      "error": true,
+      "note": "duration"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-CA-SPIKE-DURATION"
+      ],
+      "error": true,
+      "note": "duration"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-ZINC-SPARK-INTERVAL"
+      ],
+      "expected": [
+        0.0017543859649122807,
+        0.0017543859649122807
+      ],
+      "note": "period"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-EGG-ZINC-VESICLES"
+      ],
+      "error": true,
+      "note": "count"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-ZINC-VESICLE-ATOMS"
+      ],
+      "error": true,
+      "note": "count"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-ZINC-SPARKS-PER-EGG"
+      ],
+      "error": true,
+      "note": "count"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-SPERM-BEAT-DILUTED-SEMEN"
+      ],
+      "expected": [
+        19.0,
+        19.0
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-SPERM-BEAT-VISCOUS"
+      ],
+      "expected": [
+        10.0,
+        10.0
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-SPERM-BEAT-ADHERED"
+      ],
+      "expected": [
+        18.9,
+        18.9
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-SPERM-BEAT-HYPERACTIVATED"
+      ],
+      "expected": [
+        11.7,
+        11.7
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-OVIDUCT-CILIA-BEAT"
+      ],
+      "expected": [
+        5.3,
+        5.3
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-OVIDUCT-CILIA-BEAT"
+      ],
+      "expected": [
+        23.3,
+        23.3
+      ],
+      "note": "frequency"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-UTERINE-CONTRACTIONS-LATE-FOLLICULAR"
+      ],
+      "expected": [
+        0.026833333333333334,
+        0.026833333333333334
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-UTERINE-CONTRACTIONS-MENSTRUAL"
+      ],
+      "expected": [
+        0.021833333333333333,
+        0.021833333333333333
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-UTERINE-CONTRACTIONS-LATE-LUTEAL"
+      ],
+      "expected": [
+        0.022500000000000003,
+        0.022500000000000003
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T2"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T3"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T4"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T5"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T6"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T7"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-T8"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-TM"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-TSB"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-TB"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EMBRYO-TEB"
+      ],
+      "error": true,
+      "note": "time"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EHR-6W"
+      ],
+      "expected": [
+        1.95,
+        1.95
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EHR-7W"
+      ],
+      "expected": [
+        2.433333333333333,
+        2.433333333333333
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EHR-8W"
+      ],
+      "expected": [
+        2.9,
+        2.9
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EHR-9W"
+      ],
+      "expected": [
+        2.933333333333333,
+        2.933333333333333
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-EHR-10W"
+      ],
+      "expected": [
+        2.9,
+        2.9
+      ],
+      "note": "rate"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-SEGMENTATION-CLOCK-PERIOD"
+      ],
+      "expected": [
+        5.555555555555556e-05,
+        5.555555555555556e-05
+      ],
+      "note": "period"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-SEGMENTATION-CLOCK-PERIOD"
+      ],
+      "expected": [
+        9.259259259259259e-05,
+        0.0001388888888888889
+      ],
+      "note": "period"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-MAJOR-ZGA-STAGE"
+      ],
+      "error": true,
+      "note": "stage"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:HUMAN-MINOR-ZGA-STAGE"
+      ],
+      "error": true,
+      "note": "stage"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-MAJOR-ZGA-STAGE"
+      ],
+      "error": true,
+      "note": "stage"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:MOUSE-MINOR-ZGA-STAGE"
+      ],
+      "error": true,
+      "note": "stage"
+    },
+    {
+      "claim": "bio:FREQUENCY-HZ",
+      "fn": "frequency_hz",
+      "args": [
+        "bio:NOT-A-RECORD"
+      ],
+      "error": true,
+      "note": "unknown id"
+    }
+  ]
+}
